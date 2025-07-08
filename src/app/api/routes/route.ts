@@ -1,4 +1,4 @@
-import { db } from "@/db"
+import { db } from "@/index"
 import { menuItems } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
@@ -9,6 +9,7 @@ export async function GET() {
     const items = await db.select().from(menuItems);
     return NextResponse.json(items);
 }
+
 
 //POST request = to create new menu items
 
